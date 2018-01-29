@@ -19,13 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //  let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-    //    loginButton.frame(forAlignmentRect: CGRect(x: x, y: y, width: loginButton.frame.size.width, height: 40.0<#T##Double#>)
-      //  loginButton.center = view.center
-        
-        
-      //  view.addSubview(loginButton)
-        
+       
 }
     
     @IBAction func loginBUttonPressed(_ sender: Any) {
