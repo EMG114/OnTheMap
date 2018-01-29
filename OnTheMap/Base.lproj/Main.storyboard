@@ -41,12 +41,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yh7-uA-7Dg">
-                                <rect key="frame" x="16" y="305" width="343" height="40"/>
+                                <rect key="frame" x="16" y="320" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8ov-Qt-cEP"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYV-JO-heu">
                                 <rect key="frame" x="16" y="353" width="343" height="40"/>
@@ -55,6 +58,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Pfy-kL-Rt9"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-qC-oJX">
                                 <rect key="frame" x="16" y="401" width="343" height="40"/>
@@ -64,6 +70,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginBUttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jZM-Nt-gp0"/>
                                     <segue destination="cft-KM-m89" kind="show" id="M13-BQ-9hh"/>
                                 </connections>
                             </button>
@@ -73,6 +80,9 @@
                                 <state key="normal" title="Don't have an account? Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gZ-Mz-MZ9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login To Udacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOS-VC-AFe">
                                 <rect key="frame" x="123" y="245" width="128" height="21"/>
@@ -85,10 +95,14 @@
                         <color key="backgroundColor" red="0.37887193560145788" green="0.48125742843352792" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Yh7-uA-7Dg" id="ERC-nd-zoG"/>
+                        <outlet property="passwordTextField" destination="AYV-JO-heu" id="AhH-AL-Jc6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2033" y="159"/>
+            <point key="canvasLocation" x="-1449" y="268"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="wfh-vb-WK6">
