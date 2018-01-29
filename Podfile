@@ -6,6 +6,9 @@ target 'OnTheMap' do
   use_frameworks!
 
   # Pods for OnTheMap
-pod 'FBSDKLoginkit'
+# pod 'FBSDKLoginkit'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
 end
