@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+//StudentLocation object in Parse
+
 struct studentLocation {
     
     var objectId: String

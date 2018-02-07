@@ -25,13 +25,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        
+        if (textField === emailTextField) {
+            passwordTextField.becomeFirstResponder()
+        } else if (textField === passwordTextField) {
+            loginBUttonPressed(self)
+        }
         return true
     }
+    func resignIfFirstResponder(_ textField: UITextField) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
+    @IBAction func userDidTapView(_ sender: AnyObject) {
+        resignIfFirstResponder(emailTextField)
+        resignIfFirstResponder(passwordTextField)
+       
+    }
+    
     
     @IBAction func loginBUttonPressed(_ sender: Any) {
+        if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
+            
+        }
     }
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.udacity.com/account/auth#!/signup") {
+            //UIApplication.sharedApplication().openURL(url)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

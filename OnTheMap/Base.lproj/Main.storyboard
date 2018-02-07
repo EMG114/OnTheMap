@@ -83,6 +83,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agp-Zj-Qf9" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="16" y="549" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="o7Q-0P-5rT"/>
                                     <constraint firstAttribute="width" constant="343" id="oeI-Sw-jGo"/>
@@ -104,6 +105,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.53238535484015403" green="0.56743787065182971" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOS-VC-AFe" secondAttribute="trailing" constant="124" id="0o8-93-12z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AYV-JO-heu" secondAttribute="trailing" constant="16" id="1UO-DI-q7K"/>
@@ -134,6 +136,9 @@
                             <constraint firstItem="Nl7-qC-oJX" firstAttribute="top" secondItem="AYV-JO-heu" secondAttribute="bottom" constant="26" id="uqr-9i-pwp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BqP-Ba-XiY" appends="YES" id="7JC-Qe-KAo"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Yh7-uA-7Dg" id="ERC-nd-zoG"/>
@@ -141,8 +146,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BqP-Ba-XiY">
+                    <connections>
+                        <action selector="userDidTapView:" destination="BYZ-38-t0r" id="Ur1-AB-qNW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1330.4000000000001" y="282.90854572713647"/>
+            <point key="canvasLocation" x="-1807" y="237"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="wfh-vb-WK6">
