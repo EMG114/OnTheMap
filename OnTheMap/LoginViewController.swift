@@ -18,25 +18,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    apiTest()
-//
-//        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation"
-//        let url = URL(string: urlString)
-//        var request = URLRequest(url: url!)
-//            request.httpMethod = "GET"
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: request) { (data, response, error) in
-//
-//
-//
-//
-//            if error != nil { // Handle error
-//                return
-//            }
-//            print(String(data: data!, encoding: .utf8)!)
-//        }
-//        task.resume()
-        
+   // apiTest()
+      gettingAStudentLocation()
        
 }
     
@@ -59,7 +42,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         task.resume()
     }
     
-    
+    func gettingAStudentLocation() {
+        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation"
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!)
+        request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil { // Handle error
+                return
+            }
+            print(String(data: data!, encoding: .utf8)!)
+        }
+        task.resume()
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
