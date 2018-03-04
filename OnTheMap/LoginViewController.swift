@@ -80,7 +80,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         task.resume()
     }
     
-    
+    func udacity(){
+        
+    }
     func putAStudentLocation() {
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation/DbYpQMR5FG"
         let url = URL(string: urlString)
