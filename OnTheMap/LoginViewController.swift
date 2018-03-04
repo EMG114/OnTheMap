@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var xe = "test"
         
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation"
         let url = URL(string: urlString)
