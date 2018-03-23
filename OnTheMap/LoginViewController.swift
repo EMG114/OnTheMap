@@ -150,7 +150,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         
         if let url = NSURL(string: "https://www.udacity.com/account/auth#!/signup") {
-            //UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url as URL)
         }
     }
     
