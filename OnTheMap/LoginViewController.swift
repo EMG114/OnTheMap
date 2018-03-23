@@ -145,6 +145,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             task.resume()
         }
+        let secondViewController:MapViewController = MapViewController()
+        
+        self.present(secondViewController, animated: true, completion: nil)
+        self.putAStudentLocation()
     }
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
