@@ -63,7 +63,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginBUttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jZM-Nt-gp0"/>
-                                    <segue destination="cft-KM-m89" kind="show" id="M13-BQ-9hh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHC-no-Ymo">
@@ -157,7 +156,7 @@
         <!--Map View Controller-->
         <scene sceneID="wfh-vb-WK6">
             <objects>
-                <viewController title="On The Map" id="Kdh-6j-EvE" userLabel="Map View Controller" sceneMemberID="viewController">
+                <viewController title="On The Map" id="Kdh-6j-EvE" userLabel="Map View Controller" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83O-FB-eby">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
