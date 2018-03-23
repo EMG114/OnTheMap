@@ -19,7 +19,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        var annotations = [MKPointAnnotation]()
         
         // Do any additional setup after loading the view.
     }
