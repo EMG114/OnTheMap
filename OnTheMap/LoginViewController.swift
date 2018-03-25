@@ -146,8 +146,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             task.resume()
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MapViewController")
-        self.present(vc, animated: true, completion: nil)
+        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
+        self.present(tabBar, animated: true, completion: nil)
         self.putAStudentLocation()
     }
     
