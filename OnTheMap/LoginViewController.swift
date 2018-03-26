@@ -131,33 +131,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginBUttonPressed(_ sender: Any) {
         if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
-            var request = URLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+            var request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = "{\"udacity\": {\"username\": \".com\", \"password\": \"pass\"}}".data(using: .utf8)
-             //   "{\"udacity\": {\"username\": \'\(String(describing: emailTextField.text ?? nil))\'), \"password\": \'\(String(describing: passwordTextField.text ?? nil))\')}}".data(using: .utf8)
+            request.httpBody =// "{\"udacity\": {\"username\": \".com\", \"password\": \"pass\"}}".data(using: .utf8)
+                "{\"udacity\": {\"username\": \(emailTextField.text), \"password\": \(passwordTextField.text)}}".data(using: .utf8)
             let session = URLSession.shared
-            let task = session.dataTask(with: request) { data, response, error in
+            let task = session.dataTask(with: request){ data, response, error in
                 if error != nil { // Handle error…
                     return
-                }
+                } //else {
 //                do {
-//                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! NSString
+//                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! [String:String]
 //                    let range = Range(5..<data!.count)
 //                    let newData = data?.subdata(in: range) /* subset response data! */
 //                    print(String(data: newData!, encoding: .utf8)!)
-//                    //print(json)
+//                    print(json)
 //                }catch {
 //                    print(error.localizedDescription)
 //                }
                 let range = Range(5..<data!.count)
                 let newData = data?.subdata(in: range) /* subset response data! */
                 print(String(data: newData!, encoding: .utf8)!)
-                
-            }
+
+                } //}
             task.resume()
         }
+        
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
 //        self.present(tabBar, animated: true, completion: nil)
