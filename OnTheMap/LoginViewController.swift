@@ -144,22 +144,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let task = session.dataTask(with: request){ data, response, error in
                 if error != nil { // Handle error…
                     return
-                } else {
+                }
+                
+                guard let newData = data else {
+                     let range = Range(5..<data!.count)
+                      let newData = data?.subdata(in: range) /* subset response data! */
+                      print(String(data: newData!, encoding: .utf8)!)
+                    return
+                }
                 do {
-                   let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! NSDictionary
-                  
-//                    let range = Range(5..<data!.count)
-//                    let newData = data?.subdata(in: range) /* subset response data! */
-//                    print(String(data: newData!, encoding: .utf8)!)
-                    //print(json)
+                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! AnyObject
+                    print(json)
+//                 let range = Range(5..<data!.count)
+//                 let newData = data?.subdata(in: range) /* subset response data! */
+//                print(String(data: newData!, encoding: .utf8)!)
+                
                 }catch {
                     print(error.localizedDescription)
                 }
-                let range = Range(5..<data!.count)
-                let newData = data?.subdata(in: range) /* subset response data! */
-                print(String(data: newData!, encoding: .utf8)!)
+               // let range = Range(5..<data!.count)
+              //  let newData = data?.subdata(in: range) /* subset response data! */
+              //  print(String(data: newData!, encoding: .utf8)!)
 
-                } }
+                }
             task.resume()
         }
         
