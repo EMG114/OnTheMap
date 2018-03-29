@@ -138,7 +138,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            request.httpBody = "{\"udacity\": {\"username\": \".com\", \"password\": \"pass\"}}".data(using: .utf8)
+            request.httpBody =
+            //"{\"udacity\": {\"username\": \".com\", \"password\": \"pass\"}}".data(using: .utf8)
                 "{\"udacity\": {\"username\": \(emailTextField.text), \"password\": \(passwordTextField.text)}}".data(using: .utf8)
             let session = URLSession.shared
             let task = session.dataTask(with: request){ data, response, error in
@@ -146,26 +147,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 
-                guard let newData = data else {
-                     let range = Range(5..<data!.count)
-                      let newData = data?.subdata(in: range) /* subset response data! */
-                      print(String(data: newData!, encoding: .utf8)!)
-                    return
-                }
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! AnyObject
-                    print(json)
-//                 let range = Range(5..<data!.count)
-//                 let newData = data?.subdata(in: range) /* subset response data! */
-//                print(String(data: newData!, encoding: .utf8)!)
-                
+                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as AnyObject
+                  
+                     print(json["account"])
                 }catch {
-                    print(error.localizedDescription)
+                   // print(error.localizedDescription)
                 }
-               // let range = Range(5..<data!.count)
-              //  let newData = data?.subdata(in: range) /* subset response data! */
-              //  print(String(data: newData!, encoding: .utf8)!)
-
+                let range = Range(5..<data!.count)
+                let newData = data?.subdata(in: range) /* subset response data! */
+                
+                print(String(data: newData!, encoding: .utf8)!)
+               // print(newData!)
                 }
             task.resume()
         }

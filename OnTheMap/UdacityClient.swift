@@ -9,7 +9,7 @@
 import Foundation
 
 
-// MARK: - TMDBClient: NSObject
+// MARK: - UdacityClient: NSObject
 
 class UdacityClient : NSObject {
     
