@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import FacebookLogin
-import FacebookCore
+//import FacebookLogin
+//import FacebookCore
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -135,43 +135,48 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+   
     
     @IBAction func loginBUttonPressed(_ sender: Any) {
-        if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
-            var request = URLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+        
+        userDidTapView(self)
+      
+     //   if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
+            
+    let session = URLSession.shared
+    var request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody =
-            //"{\"udacity\": {\"username\": \".com\", \"password\": \"pass\"}}".data(using: .utf8)
-                "{\"udacity\": {\"username\": \(emailTextField.text), \"password\": \(passwordTextField.text)}}".data(using: .utf8)
-            let session = URLSession.shared
-            let task = session.dataTask(with: request){ data, response, error in
-                if error != nil { // Handle error…
+            request.httpBody = "{\"udacity\": {\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}}".data(using: .utf8)
+        
+        let task = session.dataTask(with: request as URLRequest){ data, response, error in
+           
+                if error != nil {
+                     //print(error?.localizedDescription)
                     return
                 }
-                
+            let range = Range(5..<data!.count)
+            let newData = data?.subdata(in: range )
+            print(String(data: newData!, encoding: .utf8)!)
+          
+        let parsedResult: AnyObject
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as AnyObject
-                  
-                     print(json["account"])
-                }catch {
-                   // print(error.localizedDescription)
+                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: .allowFragments) as AnyObject
+                    print(parsedResult)
+                    print(String(data: newData!, encoding: .utf8)!)
+                } catch {
+                    print("Could not parse the data as JSON: '\(String(describing: newData as Any))'")
+                    return
                 }
-                let range = Range(5..<data!.count)
-                let newData = data?.subdata(in: range) /* subset response data! */
-                
-                print(String(data: newData!, encoding: .utf8)!)
-               // print(newData!)
                 }
             task.resume()
-        }
-        
+    }
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
 //        self.present(tabBar, animated: true, completion: nil)
-        self.putAStudentLocation()
-    }
+       // self.putAStudentLocation()
+    //}
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         
