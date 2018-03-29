@@ -16,6 +16,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var udacityLoginButton: UIButton!
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

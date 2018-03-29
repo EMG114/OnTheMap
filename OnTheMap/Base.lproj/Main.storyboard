@@ -142,6 +142,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Yh7-uA-7Dg" id="ERC-nd-zoG"/>
                         <outlet property="passwordTextField" destination="AYV-JO-heu" id="AhH-AL-Jc6"/>
+                        <outlet property="udacityLoginButton" destination="Nl7-qC-oJX" id="Teu-gL-qv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -151,7 +152,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1807" y="237"/>
+            <point key="canvasLocation" x="-1580" y="-66"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="wfh-vb-WK6">
