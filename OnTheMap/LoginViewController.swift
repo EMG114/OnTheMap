@@ -143,35 +143,41 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       
      //   if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
             
-    let session = URLSession.shared
+    
     var request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = "{\"udacity\": {\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}}".data(using: .utf8)
-        
+        request.httpBody = "{\"udacity\": {\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}}".data(using: .utf8)
+
+        let data = try! JSONSerialization.data(withJSONObject: request.httpBody, options:JSONSerialization.WritingOptions.prettyPrinted) as AnyObject
+        //let data = request
+        let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
            
                 if error != nil {
-                     //print(error?.localizedDescription)
+                     print(error?.localizedDescription)
                     return
-                }
+                } else {
+       
             let range = Range(5..<data!.count)
+                  
             let newData = data?.subdata(in: range )
-            print(String(data: newData!, encoding: .utf8)!)
+                    print(String(data: newData!, encoding: .utf8)!)
           
         let parsedResult: AnyObject
                 do {
-                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: .allowFragments) as AnyObject
-                    print(parsedResult)
+                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as AnyObject
+                   // print(parsedResult)
                     print(String(data: newData!, encoding: .utf8)!)
                 } catch {
                     print("Could not parse the data as JSON: '\(String(describing: newData as Any))'")
                     return
                 }
-                }
+            }}
             task.resume()
     }
+
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
 //        self.present(tabBar, animated: true, completion: nil)
