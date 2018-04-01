@@ -150,7 +150,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = "{\"udacity\": {\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}}".data(using: .utf8)
 
-        let data = try! JSONSerialization.data(withJSONObject: request.httpBody, options:JSONSerialization.WritingOptions.prettyPrinted) as AnyObject
+        
         //let data = request
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
