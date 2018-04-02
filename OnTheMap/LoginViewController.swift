@@ -160,7 +160,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     return
                 } else {
        
-            let range = Range(5..<data!.count)
+            let range = Range(5...data!.count-1)
                   
             let newData = data?.subdata(in: range )
                     print(String(data: newData!, encoding: .utf8)!)
