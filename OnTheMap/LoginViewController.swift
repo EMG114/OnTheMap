@@ -156,7 +156,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
            
                 if error != nil {
-                     print(error?.localizedDescription)
+                     print("error")
                     return
                 } else {
        
