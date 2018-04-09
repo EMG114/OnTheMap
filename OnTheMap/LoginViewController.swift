@@ -148,7 +148,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"udacity\": {\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}}".data(using: .utf8)
+        request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))\", \"password\": \"\(String(describing: passwordTextField.text))\"}}".data(using: .utf8)
 
         
         //let data = request
@@ -160,7 +160,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     return
                 } else {
        
-            let range = Range(5...data!.count-1)
+            let range = Range(5..<data!.count)
                   
             let newData = data?.subdata(in: range )
                     print(String(data: newData!, encoding: .utf8)!)
