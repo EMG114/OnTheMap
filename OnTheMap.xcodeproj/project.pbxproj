@@ -76,6 +76,37 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		07611A46207D3CFD00563A2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07611A47207D3D3500563A2B /* Clients */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07611A47207D3D3500563A2B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				07611A49207D3D5E00563A2B /* Parse */,
+				07611A48207D3D4700563A2B /* Udacity */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		07611A48207D3D4700563A2B /* Udacity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Udacity;
+			sourceTree = "<group>";
+		};
+		07611A49207D3D5E00563A2B /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
 		07DE0B90201EE4F6004C84FA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +130,7 @@
 			children = (
 				07DE0B9C201EE4F6004C84FA /* AppDelegate.swift */,
 				07DE0B9E201EE4F6004C84FA /* LoginViewController.swift */,
+				07611A46207D3CFD00563A2B /* Model */,
 				078EF619201FB10C0024341C /* Constants.swift */,
 				07605C67206D191A00B19553 /* ConstantsParse.swift */,
 				07605C69206D193900B19553 /* ConstantsUdacity.swift */,
