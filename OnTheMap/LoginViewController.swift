@@ -151,7 +151,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))\", \"password\": \"\(String(describing: passwordTextField.text))\"}}".data(using: .utf8)
 
         
-        //let data = request
+      
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
            
@@ -178,11 +178,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             task.resume()
     }
 
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
-//        self.present(tabBar, animated: true, completion: nil)
-       // self.putAStudentLocation()
-    //}
+    func login(){
+        
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
+                self.present(tabBar, animated: true, completion: nil)
+         self.putAStudentLocation()
+        
+    }
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         
