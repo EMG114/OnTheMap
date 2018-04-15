@@ -183,7 +183,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
                 self.present(tabBar, animated: true, completion: nil)
-         self.putAStudentLocation()
+       
         
     }
     
