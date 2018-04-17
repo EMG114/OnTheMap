@@ -141,17 +141,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         userDidTapView(self)
       
-     //   if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
+        if emailTextField.text?.isEmpty == false || passwordTextField.text?.isEmpty == false {
             
     
-    var request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+        let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"username\": \"\(emailTextField.text)\", \"password\": \"\(passwordTextField.text)\"}".data(using: .utf8)
+        request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
 
+        print(passwordTextField.text)
+        print(emailTextField.text)
         
-      
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
            
@@ -160,22 +161,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     return
                 } else {
        
-            let range = Range(5..<data!.count)
-                  
+  
+            let range = Range(4..<data!.count)
             let newData = data?.subdata(in: range )
                     print(String(data: newData!, encoding: .utf8)!)
-          
-        let parsedResult: AnyObject
+
+        let parsedResult: Any
                 do {
-                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as AnyObject
-                   // print(parsedResult)
-                    print(String(data: newData!, encoding: .utf8)!)
+                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as Any
+                    print(parsedResult)
+                   // print(String(data: newData!, encoding: .utf8)!)
                 } catch {
-                    print("Could not parse the data as JSON: '\(String(describing: newData as Any))'")
+                    print("Could not parse the data as JSON)'")
                     return
                 }
             }}
             task.resume()
+    }
     }
 
     func login(){

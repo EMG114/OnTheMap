@@ -27,14 +27,14 @@ struct studentLocation {
     }
     
     init(dictionary: [String : AnyObject]) {
-        objectId = dictionary["objectId"] as! String!
-        uniqueKey = dictionary["uniqueKey"] as! String!
-        firstName = dictionary["firstName"] as! String!
-        lastName = dictionary["lastName"] as! String
-        mapString = dictionary["mapString"] as! String!
-        mediaURL = dictionary["mediaURL"] as! String!
-        latitude = dictionary["objectId"] as! Double!
-        longitude = dictionary["uniqueKey"] as! Double!
+        objectId = (dictionary["objectId"] as! String?)!
+        uniqueKey = (dictionary["uniqueKey"] as! String?)!
+        firstName = (dictionary["firstName"] as! String?)!
+        lastName = (dictionary["lastName"] as! String?)!
+        mapString = (dictionary["mapString"] as! String?)!
+        mediaURL = (dictionary["mediaURL"] as! String?)!
+        latitude = (dictionary["objectId"] as! Double?)!
+        longitude = (dictionary["uniqueKey"] as! Double?)!
     }
     
     
