@@ -26,30 +26,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
 //apiTest()
-    //  gettingAStudentLocation()
+     // gettingAStudentLocation()
        // postAStudentLocation()
-   // putAStudentLocation()
+   putAStudentLocation()
        
 }
     
-//    func apiTest(){
-//
-//        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?limit=100"
-//        let url = URL(string: urlString)
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "GET"
-//       request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
-//        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: request) { (data, response, error) in
-//
-//
-//           // let parseJson = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-//
-//            print(String(data: data!, encoding: .utf8)!)
-//        }
-//        task.resume()
-//    }
+    func apiTest(){
+
+        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?limit=100"
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+       request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+
+
+           // let parseJson = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+
+            print(String(data: data!, encoding: .utf8)!)
+        }
+        task.resume()
+    }
     
     func gettingAStudentLocation() {
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation"
@@ -89,9 +89,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
    
     
-    func api() {
-        
-    }
+  
     func putAStudentLocation() {
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation/DbYpQMR5FG"
         let url = URL(string: urlString)
