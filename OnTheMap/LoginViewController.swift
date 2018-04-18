@@ -160,13 +160,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 } else {
        
   
-            let range = Range(4..<data!.count)
+            let range = Range(5..<data!.count)
             let newData = data?.subdata(in: range )
                     print(String(data: newData!, encoding: .utf8)!)
 
         let parsedResult: Any
                 do {
-                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as Any
+                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) 
                     print(parsedResult)
                    // print(String(data: newData!, encoding: .utf8)!)
                 } catch {
