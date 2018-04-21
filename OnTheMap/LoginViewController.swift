@@ -146,14 +146,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = body
-//        request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
+            let body =  ["udacity":["username":emailTextField.text,"password":passwordTextField.text]]
+            let jsonData = try? JSONSerialization.data(withJSONObject: body)
+
+              request.httpBody = jsonData
+//     request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
 
         print(passwordTextField.text)
         print(emailTextField.text)
         
         let session = URLSession.shared
-        let task = session.dataTask(with: request as URLRequest){ data, response, error in
+        let task = session.dataTask(with: request as URLRequest){ jsonData, response, error in
            
                 if error != nil {
                      print("error")
@@ -161,8 +164,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 } else {
        
   
-            let range = Range(5..<data!.count)
-            let newData = data?.subdata(in: range )
+            let range = Range(5..<jsonData!.count)
+            let newData = jsonData?.subdata(in: range )
                     print(String(data: newData!, encoding: .utf8)!)
 
         let parsedResult: Any
@@ -177,6 +180,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }}
             task.resume()
     }
+        
     }
 
     func login(){
