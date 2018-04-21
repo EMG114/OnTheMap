@@ -146,7 +146,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
+            request.httpBody = body
+//        request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
 
         print(passwordTextField.text)
         print(emailTextField.text)
