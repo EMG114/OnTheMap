@@ -28,8 +28,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //apiTest()
      // gettingAStudentLocation()
        // postAStudentLocation()
-   putAStudentLocation()
-       
+  // putAStudentLocation()
+      gettingPubliUserData()
 }
     
     func apiTest(){
@@ -147,7 +147,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let body =  ["udacity":["username":emailTextField.text,"password":passwordTextField.text]]
-            let jsonData = try? JSONSerialization.data(withJSONObject: body)
+            let jsonData = try? JSONSerialization.data(withJSONObject: body )
 
               request.httpBody = jsonData
 //     request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
@@ -166,12 +166,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
             let range = Range(5..<jsonData!.count)
             let newData = jsonData?.subdata(in: range )
-                    print(String(data: newData!, encoding: .utf8)!)
+                   // print(String(data: newData!, encoding: .utf8)!)
 
         let parsedResult: Any
                 do {
                     parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) 
-                    print(parsedResult)
+               //   print(parsedResult)
                    // print(String(data: newData!, encoding: .utf8)!)
                 } catch {
                     print("Could not parse the data as JSON)'")
@@ -179,9 +179,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }}
             task.resume()
+            
     }
-        
+      
     }
+    
+    func gettingPubliUserData() {
+        let request = URLRequest(url: URL(string: "https://www.udacity.com/api/users/u30685")!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil { // Handle error...
+                return
+            }
+            let range = Range(5..<data!.count)
+            let newData = data?.subdata(in: range) /* subset response data! */
+            print(String(data: newData!, encoding: .utf8)!)
+        }
+        task.resume()
+    }
+    
 
     func login(){
         
