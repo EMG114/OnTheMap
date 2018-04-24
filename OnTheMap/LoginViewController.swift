@@ -152,8 +152,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
               request.httpBody = jsonData
 //     request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
 
-        print(passwordTextField.text)
-        print(emailTextField.text)
+      
         
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest){ jsonData, response, error in
