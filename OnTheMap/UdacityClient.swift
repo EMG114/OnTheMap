@@ -31,9 +31,13 @@ class UdacityClient : NSObject {
     }
     
 
+    // MARK: GET
     
+    //func taskForGETMethod
 
-
+    // MARK: POST
+    
+    //func taskForPOSTMethod
     
     // MARK: Shared Instance
 
