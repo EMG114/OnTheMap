@@ -33,11 +33,13 @@ class UdacityClient : NSObject {
 
     // MARK: GET
     
-    //func taskForGETMethod
+    //func taskForGETMethod(method: String, parameters: [String: AnyObject], completionHandlerForGET: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
 
     // MARK: POST
     
-    //func taskForPOSTMethod
+    //func taskForPOSTMethod(method: String, parameters: [String: AnyObject], jsonBody: [String: AnyObject], completionHandlerForPOST: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    
+
     
     // MARK: Shared Instance
 
