@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
      // gettingAStudentLocation()
        // postAStudentLocation()
   // putAStudentLocation()
-      gettingPubliUserData()
+      //gettingPubliUserData()
 }
     
     func apiTest(){
@@ -165,13 +165,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
             let range = Range(5..<jsonData!.count)
             let newData = jsonData?.subdata(in: range )
-                   // print(String(data: newData!, encoding: .utf8)!)
+              //  print(String(data: newData!, encoding: .utf8)!)
 
-        let parsedResult: Any
+        let parsedResult: AnyObject
                 do {
-                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) 
-               //   print(parsedResult)
+                    parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as! NSArray
+               // print(parsedResult)
                    // print(String(data: newData!, encoding: .utf8)!)
+                  
+                    // Loging for ["account"]["key"]
+                    guard let account = parsedResult["account"] as? [String : AnyObject], let _ = account["key"] as? String else {
+                        print("Can't find [account][key] in response")
+    
+                        return
+                    }
+                    
+                    // Loging for ["session"]["id"]
+                    guard let session = parsedResult["session"] as? [String : AnyObject], let _ = session["id"] as? String else {
+                        print("Can't find [session][id] in response")
+                      
+                        return
+                    }
+                   
+                    
                 } catch {
                     print("Could not parse the data as JSON)'")
                     return
