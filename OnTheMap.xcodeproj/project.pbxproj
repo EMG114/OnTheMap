@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0750E543209A38B000E96CF5 /* UdacityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0750E542209A38B000E96CF5 /* UdacityUser.swift */; };
 		0753C43420266107008352B8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753C43320266107008352B8 /* ApiClient.swift */; };
 		075610CA201F9DB000592FF2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075610C9201F9DB000592FF2 /* Bolts.framework */; };
 		075610CD201F9E1E00592FF2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075610CB201F9E1E00592FF2 /* FBSDKCoreKit.framework */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0750E542209A38B000E96CF5 /* UdacityUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityUser.swift; sourceTree = "<group>"; };
 		0753C43320266107008352B8 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		075610C9201F9DB000592FF2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		075610CB201F9E1E00592FF2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				07DE0B9E201EE4F6004C84FA /* LoginViewController.swift */,
 				07611A46207D3CFD00563A2B /* Model */,
 				078EF619201FB10C0024341C /* Constants.swift */,
+				0750E542209A38B000E96CF5 /* UdacityUser.swift */,
 				07605C67206D191A00B19553 /* ConstantsParse.swift */,
 				07605C69206D193900B19553 /* ConstantsUdacity.swift */,
 				078EF61D202006650024341C /* UdacityClient.swift */,
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0750E543209A38B000E96CF5 /* UdacityUser.swift in Sources */,
 				078EF61E202006650024341C /* UdacityClient.swift in Sources */,
 				07605C6A206D193900B19553 /* ConstantsUdacity.swift in Sources */,
 				078EF61C201FB94A0024341C /* StudentLocation.swift in Sources */,
