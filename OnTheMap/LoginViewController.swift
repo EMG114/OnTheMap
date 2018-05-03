@@ -173,8 +173,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                // print(parsedResult)
                    // print(String(data: newData!, encoding: .utf8)!)
                   
-                    // Loging for ["account"]["key"]
-                    guard let account = parsedResult["account"] as? [String : AnyObject], let _ = account["key"] as? String else {
+                    
+                    guard let account = parsedResult["account"] as? [String : AnyObject], let _ = account["key"] as? String? else {
                         print("Can't find [account][key] in response")
     
                         return
