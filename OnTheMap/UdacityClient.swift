@@ -18,7 +18,7 @@ class UdacityClient : NSObject {
       var session = URLSession.shared
     
       var sessionID: String? = nil
-      var userID: Int? = nil
+      var userID: String? = nil
     
 // MARK: Initializers
 
@@ -78,19 +78,23 @@ class UdacityClient : NSObject {
 
 // MARK: POST
 
-    func taskForPOSTMethod(method: String, parameters: [String: AnyObject], jsonBody: String, completionHandlerForPOST: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionDataTask {
+    func taskForPOSTMethod(method: String, jsonBody: String, completionHandlerForPOST: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionDataTask {
 
 
        /* 1. Set the parameters */
-        var parametersDict = parameters
-        parametersDict[UdacityClient.ParameterKeys.SessionID] = UdacityClient.ParameterKeys.SessionID as AnyObject?
+     //   var parametersDict = parameters
+     //  parametersDict[UdacityClient.ParameterKeys.SessionID] = UdacityClient.ParameterKeys.SessionID as AnyObject?
        /* 2/3. Build the URL, Configure the request */
-       let request = NSMutableURLRequest(url: udacityURLFromParameters(parametersDict, withPathExtension: method))
+       let request = NSMutableURLRequest(url:
+        udacityURLFromParameters(parametersDict, withPathExtension: method))
      
        request.httpMethod = "POST"
        request.addValue("application/json", forHTTPHeaderField: "Accept")
        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
        request.httpBody = jsonBody.data(using: String.Encoding.utf8)
+        
+        let range = Range(5..<data!.count)
+        let newData = data?.subdata(in: range )
 
         /* 4. Make the request */
        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
@@ -120,7 +124,7 @@ class UdacityClient : NSObject {
            }
 
         //            /* 5/6. Parse the data and use the data (happens in completion handler) */
-                  // self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPOST)
+                   self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPOST)
                }
         
         //        /* 7. Start the request */

@@ -69,7 +69,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gZ-Mz-MZ9"/>
+                                    <action selector="SignUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTI-w4-qyh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login To Udacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOS-VC-AFe">

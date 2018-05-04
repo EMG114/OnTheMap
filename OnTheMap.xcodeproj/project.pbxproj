@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0750E543209A38B000E96CF5 /* UdacityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0750E542209A38B000E96CF5 /* UdacityUser.swift */; };
-		0753C43420266107008352B8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753C43320266107008352B8 /* ApiClient.swift */; };
+		0753C43420266107008352B8 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753C43320266107008352B8 /* Convenience.swift */; };
 		075610CA201F9DB000592FF2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075610C9201F9DB000592FF2 /* Bolts.framework */; };
 		075610CD201F9E1E00592FF2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075610CB201F9E1E00592FF2 /* FBSDKCoreKit.framework */; };
 		075610CE201F9E1E00592FF2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075610CC201F9E1E00592FF2 /* FBSDKLoginKit.framework */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0750E542209A38B000E96CF5 /* UdacityUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityUser.swift; sourceTree = "<group>"; };
-		0753C43320266107008352B8 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		0753C43320266107008352B8 /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		075610C9201F9DB000592FF2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		075610CB201F9E1E00592FF2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		075610CC201F9E1E00592FF2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				07605C69206D193900B19553 /* ConstantsUdacity.swift */,
 				078EF61D202006650024341C /* UdacityClient.swift */,
 				078EF61B201FB94A0024341C /* StudentLocation.swift */,
-				0753C43320266107008352B8 /* ApiClient.swift */,
+				0753C43320266107008352B8 /* Convenience.swift */,
 				0774D9BA2032411A0080C77D /* ParseClient.swift */,
 				07DE0BA0201EE4F6004C84FA /* Main.storyboard */,
 				079626942060399D00390BF9 /* MapViewController.swift */,
@@ -309,7 +309,7 @@
 				07DE0B9D201EE4F6004C84FA /* AppDelegate.swift in Sources */,
 				078EF61A201FB10C0024341C /* Constants.swift in Sources */,
 				07605C68206D191A00B19553 /* ConstantsParse.swift in Sources */,
-				0753C43420266107008352B8 /* ApiClient.swift in Sources */,
+				0753C43420266107008352B8 /* Convenience.swift in Sources */,
 				079626952060399D00390BF9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
