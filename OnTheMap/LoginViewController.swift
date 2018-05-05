@@ -147,17 +147,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            let body =  ["udacity":["username":emailTextField.text,"password":passwordTextField.text]]
-            let jsonData = try? JSONSerialization.data(withJSONObject: body )
+         //   let body =  ["udacity":["username":emailTextField.text,"password":passwordTextField.text]]
+          //  let jsonData = try? JSONSerialization.data(withJSONObject: body )
             
-            request.httpBody = jsonData
-            //     request.httpBody = "{\"udacity\": {\"username\": \"\(String(describing: emailTextField.text))!\", \"password\": \"\(String(describing: passwordTextField.text))!\"}}".data(using: String.Encoding.utf8)
+           // request.httpBody = jsonData
+                 request.httpBody = "{\"udacity\": {\"username\": \"egutierrez411@gmail.com\", \"password\": \"Zalaya123\"}}".data(using: String.Encoding.utf8)
             
             
             
             let session = URLSession.shared
             let task = session.dataTask(with: request as URLRequest){ jsonData, response, error in
-                
+                print(request.url)
                 if error != nil {
                     print("error")
                     return
@@ -170,8 +170,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     let parsedResult: AnyObject
                     do {
-                        parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as! NSArray
-                        // print(parsedResult)
+                        parsedResult = try JSONSerialization.jsonObject(with: newData!, options: []) as AnyObject
+                         print(parsedResult)
                         // print(String(data: newData!, encoding: .utf8)!)
                         
                         
