@@ -175,19 +175,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         // print(String(data: newData!, encoding: .utf8)!)
                         
                         
-                        guard let account = parsedResult["account"] as? [String : AnyObject], let _ = account["key"] as? String? else {
+                        guard let account = parsedResult["account"] as? [String : AnyObject], let key = account["key"] as? String? else {
                             print("Can't find [account][key] in response")
-                            
+                        
                             return
                         }
-                        
-                        // Loging for ["session"]["id"]
-                        guard let session = parsedResult["session"] as? [String : AnyObject], let _ = session["id"] as? String else {
+                     
+                       
+                       
+                        guard let session = parsedResult["session"] as? [String : AnyObject], let sessionID = session["id"] as? String else {
                             print("Can't find [session][id] in response")
                             
                             return
                         }
-                        
+                       
+                   
                         
                     } catch {
                         print("Could not parse the data as JSON)'")
@@ -201,7 +203,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func gettingPubliUserData() {
-        let request = URLRequest(url: URL(string: "https://www.udacity.com/api/users/u30685")!)
+        let request = URLRequest(url: URL(string: "https://www.udacity.com/api/users/id")!)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil { // Handle error...
