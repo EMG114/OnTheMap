@@ -151,7 +151,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
           //  let jsonData = try? JSONSerialization.data(withJSONObject: body )
             
            // request.httpBody = jsonData
-                 request.httpBody = "{\"udacity\": {\"username\": \"egutierrez411@gmail.com\", \"password\": \"Zalaya123\"}}".data(using: String.Encoding.utf8)
+                 request.httpBody = "{\"udacity\": {\"username\": \"\", \"password\": \"\"}}".data(using: String.Encoding.utf8)
             
             
             
