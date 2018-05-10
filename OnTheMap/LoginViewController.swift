@@ -157,7 +157,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             let session = URLSession.shared
             let task = session.dataTask(with: request as URLRequest){ jsonData, response, error in
-                print(request.url)
+             
                 if error != nil {
                     print("error")
                     return
