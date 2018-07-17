@@ -33,8 +33,8 @@ struct studentLocation {
         lastName = (dictionary["lastName"] as! String?)!
         mapString = (dictionary["mapString"] as! String?)!
         mediaURL = (dictionary["mediaURL"] as! String?)!
-        latitude = (dictionary["objectId"] as! Double?)!
-        longitude = (dictionary["uniqueKey"] as! Double?)!
+        latitude = (dictionary["latitude"] as! Double?)!
+        longitude = (dictionary["longitude"] as! Double?)!
     }
     
     

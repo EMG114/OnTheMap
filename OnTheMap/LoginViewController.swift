@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        //apiTest()
+        apiTest()
         // gettingAStudentLocation()
         // postAStudentLocation()
         // putAStudentLocation()
